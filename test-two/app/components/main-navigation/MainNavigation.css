@@ -1,0 +1,9 @@
+
+.nav-item a {
+    color: red;
+}
+
+.nav-item a:hover,
+.nav-item a.active {
+    color: pink;
+}

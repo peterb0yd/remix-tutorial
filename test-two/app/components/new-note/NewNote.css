@@ -4,6 +4,7 @@ form.new-note {
     flex-direction: column;
     justify-content: center;
     width: 300px;
+    color: var(--cool-color);
 }
 
 .error {

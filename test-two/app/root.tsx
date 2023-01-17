@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -37,7 +38,27 @@ export default function App() {
   );
 }
 
-export function links () {
+export const ErrorBoundary = ({ error }: { error: Error }) => {
+  return (
+    <html lang="en">
+      <head>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <header>
+          <MainNavigation />
+        </header>
+        <h1>Something went wrong</h1>
+        <p>{error.message}</p>
+        <p>Back to <Link to='/'>Safety</Link></p>
+        <Scripts />
+      </body>
+    </html>
+  );
+};
+
+export const links = () => {
   return [
     { rel: "stylesheet", href: styles },
     ...mainNavLinks(),
